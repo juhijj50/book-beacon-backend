@@ -31,7 +31,15 @@ class Settings(BaseSettings):
     chat_model: str = "gemini-2.5-flash"
 
     # --- CORS (set to your Vercel URL in production) ---
-    cors_origins: list[str] = ["*"]
+    # Plain string, not JSON — comma-separated if you need more than one origin,
+    # e.g. "https://book-beacon.vercel.app,https://www.book-beacon.app"
+    cors_origins: str = "*"
+
+    @property
+    def cors_origins_list(self) -> list[str]:
+        if self.cors_origins.strip() == "*":
+            return ["*"]
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 settings = Settings()
