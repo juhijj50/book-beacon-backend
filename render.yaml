@@ -13,3 +13,7 @@ services:
         generateValue: true   # Render generates a strong secret for you
       - key: GEMINI_API_KEY
         sync: false   # optional; unset = core API only, keeper off duty
+      - key: GOOGLE_BOOKS_API_KEY
+        sync: false   # optional; unset = book search still works, just rate-limited
+      - key: CORS_ORIGINS
+        sync: false   # JSON array, e.g. ["https://your-frontend.vercel.app"]
