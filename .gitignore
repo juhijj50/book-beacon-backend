@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# secrets / local config
+.env
+.env.local
+
+# logs
+*.log
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
